@@ -8,3 +8,15 @@ logs/
 venv/
 db/oltp/oltp_datos.sql
 db/bak/
+beep*
+r.*
+s.*
+b.*
+parseFloat*
+visitIsland*
+{*
+$*
+`
+i
+1
+5
