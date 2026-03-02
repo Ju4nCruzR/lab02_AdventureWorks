@@ -1,0 +1,28 @@
+services:
+  mssql:
+    image: mcr.microsoft.com/mssql/server:2025-latest
+    container_name: lab02_mssql
+    environment:
+      ACCEPT_EULA: "Y"
+      MSSQL_SA_PASSWORD: "Admin1234!"
+    ports:
+      - "1433:1433"
+    volumes:
+      - sqlvolume:/var/opt/mssql
+      - ../db/bak:/var/opt/mssql_bak
+
+  postgres:
+    image: postgres:18
+    container_name: lab02_postgres
+    environment:
+      POSTGRES_USER: adventure
+      POSTGRES_PASSWORD: adventure123
+      POSTGRES_DB: adventureworks_oltp
+    ports:
+      - "5432:5432"
+    volumes:
+      - pgvolume:/var/lib/postgresql
+
+volumes:
+  sqlvolume:
+  pgvolume:

@@ -1,0 +1,22 @@
+database:
+  oltp:
+    host: localhost
+    port: 5432
+    database: adventureworks_oltp
+    user: adventure
+    password: adventure123
+  olap:
+    host: localhost
+    port: 5432
+    database: adventureworks_oltp
+    user: adventure
+    password: adventure123
+
+etl:
+  batch_size: 1000
+  log_level: INFO
+
+app:
+  host: 0.0.0.0
+  port: 5000
+  debug: true
